@@ -1,10 +1,8 @@
 
 ![https://yoonik.me/wp-content/uploads/2019/08/cropped-LogoV4_TRANSPARENT.png](https://yoonik.me/wp-content/uploads/2019/08/cropped-LogoV4_TRANSPARENT.png)
 
-# YooniK BiometricInThings API: Python Module & Sample
+# YooniK BiometricInThings API: Python SDK & Sample
 
-# Badges need editing 
-[![PyPi Version](https://img.shields.io/pypi/v/yk_face.svg)](https://pypi.org/project/yk-bit/)
 [![License](https://img.shields.io/pypi/l/yk_face.svg)](https://github.com/dev-yoonik/YK-BiT-Python/blob/master/LICENSE)
 
 
@@ -60,6 +58,3 @@ Run:
 ```bash
 python run_bit_sample.py
 ```
-
-
-
