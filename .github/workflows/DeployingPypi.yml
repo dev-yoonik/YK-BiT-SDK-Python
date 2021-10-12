@@ -8,7 +8,7 @@ on:
     types: [ published ]
 
 env:
-  #:  'https://test.pypi.org/legacy/'
+  # PYPI_TEST_SOURCE_URL:  'https://test.pypi.org/legacy/'
   PY_VERSION: 3.6
 
 jobs:
