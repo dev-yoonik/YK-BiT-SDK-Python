@@ -8,8 +8,7 @@ on:
     types: [ published ]
 
 env:
-
-  PYPI_SOURCE_URL:  'https://test.pypi.org/legacy/'
+  #:  'https://test.pypi.org/legacy/'
   PY_VERSION: 3.6
 
 jobs:
@@ -34,5 +33,5 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-        repository_url: ${{ env.PYPI_SOURCE_URL }}
-        verbose: true
+        #repository_url: ${{ env.PYPI_TEST_SOURCE_URL }}
+        #verbose: true
