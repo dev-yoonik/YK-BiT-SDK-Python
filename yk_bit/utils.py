@@ -1,4 +1,4 @@
-""" Utilities for the Python SDK of the YooniK Face API.
+""" Utilities for the Python SDK of the YooniK BiometricInThings API.
 """
 import base64
 import os
@@ -7,7 +7,7 @@ import requests
 
 
 class YoonikBitException(Exception):
-    """Custom Exception for the python SDK of the YooniK Face API."""
+    """Custom Exception for the python SDK of the YooniK BiometricInThings API."""
     def __init__(self, status_code, message):
         """ Class initializer.
         :param status_code: HTTP responde status code.
