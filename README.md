@@ -3,7 +3,8 @@
 
 # YooniK BiometricInThings API: Python SDK & Sample
 
-[![License](https://img.shields.io/pypi/l/yk_face.svg)](https://github.com/dev-yoonik/YK-BiT-Python/blob/master/LICENSE)
+[![PyPi Version](https://img.shields.io/pypi/v/yk_bit.svg)](https://pypi.org/project/yk-bit/)
+[![License](https://img.shields.io/pypi/l/yk_bit.svg)](https://github.com/dev-yoonik/YK-BiT-Python/blob/master/LICENSE)
 
 
 This repository contains the Python Module of the YooniK BiometricInThings API, an offering within [YooniK Services](https://yoonik.me)
