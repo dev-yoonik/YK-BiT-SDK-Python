@@ -4,7 +4,7 @@
 # YooniK BiometricInThings API: Python SDK & Sample
 
 [![PyPi Version](https://img.shields.io/pypi/v/yk_bit.svg)](https://pypi.org/project/yk-bit/)
-[![License](https://img.shields.io/pypi/l/yk_bit.svg)](https://github.com/dev-yoonik/YK-BiT-Python/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/dev-yoonik/YK-BiT-SDK-Python)](https://github.com/dev-yoonik/YK-BiT-Python/blob/master/LICENSE)
 
 
 This repository contains the Python Module of the YooniK BiometricInThings API, an offering within [YooniK Services](https://yoonik.me)
@@ -35,16 +35,17 @@ EV_API_KEY = getenv('YK_BIT_X_API_KEY')
 YKB.BaseUrl.set(EV_BASE_URL)
 YKB.Key.set(EV_API_KEY)
 
-YKB.bit.status() # Verifies the camera availability status
-
-captured = YKB.capture(capture_timeout=10, anti_spoofing=True, live_quality_analysis=True)
-print(captured)
-
-verified = YKB.verify(reference_image=captured.image, capture_time_out=10, matching_score_threshold=0.8)
-print(verified)
-
-verified_images = YKB.verify_images(probe_image=verified.verified_image, reference_image=captured.image, matching_score_threshold=0.8)
-print(verified_images)
+# Verifies the camera availability status
+if YKB.bit.status() == YKB.BiTStatus.Available:
+    
+    captured = YKB.capture(capture_timeout=10, anti_spoofing=True, live_quality_analysis=True)
+    print(captured)
+    
+    verified = YKB.verify(reference_image=captured.image, capture_time_out=10, matching_score_threshold=0.8)
+    print(verified)
+    
+    verified_images = YKB.verify_images(probe_image=verified.verified_image, reference_image=captured.image, matching_score_threshold=0.8)
+    print(verified_images)
 
 
 ```
