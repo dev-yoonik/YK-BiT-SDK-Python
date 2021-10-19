@@ -1,15 +1,11 @@
-# this file is *not* meant to cover or endorse the use of GitHub Actions, but rather to
-# help make automated releases for this project
-
-name: "Deploying Python Module to PyPi"
+name: "Deploying Python SDK Package to PyPi"
 
 on:
   release:
     types: [ published ]
 
 env:
-
-  PYPI_SOURCE_URL:  'https://test.pypi.org/legacy/'
+  # PYPI_TEST_SOURCE_URL:  'https://test.pypi.org/legacy/'
   PY_VERSION: 3.6
 
 jobs:
@@ -34,5 +30,5 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
-        repository_url: ${{ env.PYPI_SOURCE_URL }}
-        verbose: true
+        #repository_url: ${{ env.PYPI_TEST_SOURCE_URL }}
+        #verbose: true
