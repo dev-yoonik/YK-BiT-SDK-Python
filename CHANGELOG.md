@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--   GitHub Action workflow
--   Sample Project
--   BiT API base url and x-api-key are environment variables
--   Coverage of all BiT API endpoints
+-    GitHub Action workflow
+-    Sample Project
+-    BiT API base url and x-api-key are environment variables
+-    Coverage of all BiT API endpoints
