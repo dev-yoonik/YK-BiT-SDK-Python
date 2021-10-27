@@ -9,8 +9,6 @@
 
 This repository contains the Python Module of the YooniK BiometricInThings API, an offering within [YooniK Services](https://yoonik.me)
 
-For more information please [contact us](mailto:info@yoonik.me).
-
 ## Getting started
 
 Installing from the source code:
@@ -50,6 +48,7 @@ if YKB.bit.status() == YKB.BiTStatus.Available:
 
 ```
 
+ If you're interested in using YooniK.BiometricInThings API for identification purposes, please contact us.
 
 ## Running the sample
 
@@ -60,3 +59,8 @@ Run:
 ```bash
 python run_bit_sample.py
 ```
+
+## Contact & Support
+
+For more information and trial licenses please [contact us](mailto:tech@yoonik.me) or join us at our [discord community](https://discord.gg/SqHVQUFNtN).
+
