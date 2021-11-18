@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/dev-yoonik/YK-BiT-SDK-Python)](https://github.com/dev-yoonik/YK-BiT-SDK-Python/blob/main/LICENSE)
 
 
-This repository contains the Python Module of the YooniK BiometricInThings API, an offering within [YooniK Services](https://yoonik.me)
+This repository contains the Python Module of the YooniK BiT API, an offering within [YooniK Services](https://yoonik.me)
 
 ## Getting started
 
@@ -59,6 +59,10 @@ Run:
 ```bash
 python run_bit_sample.py
 ```
+
+## YooniK BiT API Details
+
+For a complete specification of our BiT API please check the [swagger file](https://dev-yoonik.github.io/YK-BiT-Documentation/).
 
 ## Contact & Support
 
