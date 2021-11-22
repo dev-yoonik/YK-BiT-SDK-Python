@@ -1,6 +1,17 @@
 import base64
 from os import getenv
-from yk_bit import BaseUrl, Key, capture, verify_images, verify, status, BiTStatus
+from yk_bit import BaseUrl, Key, capture, verify_images, verify, status, setup, BiTStatus
+
+"""
+First time running:
+ - Run the BiT App
+ - Run this SDK App
+ - If the setup was successful: 
+   - Restart the BiT App
+   - Comment the "setup" block
+ - Otherwise re-do the steps from the beginning
+"""
+
 
 # BiometricInThings API Environment Variables
 EV_BASE_URL = getenv('YK_BIT_BASE_URL')
@@ -17,6 +28,12 @@ def base64_to_file(filename: str, data: str):
 
 
 if __name__ == "__main__":
+
+    # Setup
+    bit_setup = setup()
+    print(f"BiT Setup Successful: {bit_setup} \n")
+    exit()
+
     # Status
     bit_availability = status()
     print(f"BiT Availability: {bit_availability} \n")
