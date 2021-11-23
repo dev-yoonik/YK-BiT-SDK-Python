@@ -104,14 +104,9 @@ def status() -> BiTStatus:
     return BiTStatus.Available
 
 
-def setup() -> bool:
+def setup():
     """
         Perform BiT setup actions
-    :return: True if setup was successful, False otherwise
     """
     url = 'bit/setup'
-    try:
-        utils.request('GET', url)
-    except Exception:
-        raise
-    return True
+    utils.request('GET', url)

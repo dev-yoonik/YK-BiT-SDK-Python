@@ -6,10 +6,8 @@ from yk_bit import BaseUrl, Key, capture, verify_images, verify, status, setup, 
 First time running:
  - Run the BiT App
  - Run this SDK App
- - If the setup was successful: 
-   - Restart the BiT App
+ - If the setup was successful:
    - Comment the "setup" block
- - Otherwise re-do the steps from the beginning
 """
 
 
@@ -30,9 +28,15 @@ def base64_to_file(filename: str, data: str):
 if __name__ == "__main__":
 
     # Setup
-    bit_setup = setup()
-    print(f"BiT Setup Successful: {bit_setup} \n")
-    exit()
+    bit_setup = False
+    try:
+        setup()
+        bit_setup = True
+    except Exception as ex:
+        print(ex)
+    finally:
+        print(f"BiT Setup Successful: {bit_setup} \n")
+        exit()
 
     # Status
     bit_availability = status()
