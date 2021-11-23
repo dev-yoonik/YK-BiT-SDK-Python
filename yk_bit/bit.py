@@ -104,16 +104,10 @@ def status() -> BiTStatus:
     return BiTStatus.Available
 
 
-def setup() -> bool:
+def setup():
     """
         Perform BiT setup actions
     """
     url = 'bit/setup'
-    try:
-        utils.request('GET', url)
-    except utils.YoonikBitException as bit_exception:
-        if bit_exception.status_code == 500:
-            return False
-        raise
-    return True
+    utils.request('GET', url)
 
