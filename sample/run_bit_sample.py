@@ -28,13 +28,13 @@ def base64_to_file(filename: str, data: str):
 if __name__ == "__main__":
 
     # Setup
-    bit_setup = False
     try:
-        bit_setup = setup()
+        print("Setting up BiT")
+        setup()
+        print(f"BiT Setup Successful. \n")
     except Exception as ex:
+        print(f"BiT Setup unsuccessful. \n")
         print(ex)
-    finally:
-        print(f"BiT Setup Successful: {bit_setup} \n")
         exit()
 
     # Status
