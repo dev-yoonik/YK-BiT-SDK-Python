@@ -102,3 +102,12 @@ def status() -> BiTStatus:
             return BiTStatus.NotAvailable
         raise
     return BiTStatus.Available
+
+
+def setup():
+    """
+        Perform BiT setup actions
+    """
+    url = 'bit/setup'
+    utils.request('GET', url)
+
