@@ -1,4 +1,3 @@
 from . import bit
-from . import utils
-from .utils import YoonikBitException, Key, BaseUrl
+from .utils import Key, BaseUrl
 from .bit import capture, verify_images, verify, status, setup, BiTStatus
