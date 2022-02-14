@@ -20,8 +20,8 @@ setup(
     install_requires=[
         "six",
         "requests",
-        "setuptools"
-        "yk-utils"
+        "setuptools",
+        "yk-utils>=0.2.0,<1"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
