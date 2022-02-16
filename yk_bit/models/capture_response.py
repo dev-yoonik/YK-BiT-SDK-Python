@@ -4,8 +4,8 @@ from __future__ import absolute_import
 from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
-from yk_bit.models import utils
-from yk_bit.models.base_model_ import Model
+from yk_utils.models import deserialization
+from yk_utils.models import Model
 
 
 class CaptureResponse(Model):
@@ -44,7 +44,7 @@ class CaptureResponse(Model):
         :return: The capture_response of this CaptureResponse.  # noqa: E501
         :rtype: CaptureResponse
         """
-        return utils.deserialize_model(dikt, cls)
+        return deserialization.deserialize_model(dikt, cls)
 
     @property
     def image(self) -> str:

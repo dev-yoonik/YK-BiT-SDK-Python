@@ -1,7 +1,8 @@
 """ Module of the YooniK BiometricInThings API.
 """
 from enum import Enum
-from yk_bit import utils
+from yk_utils.image import parse_image
+from yk_utils.apis import request, YoonikApiException
 from yk_bit.models import CaptureRequest, VerifyImagesRequest, VerifyRequest, \
     CaptureResponse, VerifyResponse, VerifyImagesResponse
 
@@ -26,7 +27,7 @@ def capture(capture_timeout: float = 10, anti_spoofing: bool = True,
 
     url = 'bit/capture'
     capture_request = CaptureRequest(capture_timeout, anti_spoofing, live_quality_analysis).to_dict()
-    response = utils.request('POST', url, json=capture_request)
+    response = request('POST', url, json=capture_request)
 
     return CaptureResponse.from_dict(response)
 
@@ -53,16 +54,15 @@ def verify(reference_image, capture_time_out: float = 10.0, matching_score_thres
         """
     url = 'bit/verify'
     verify_request = VerifyRequest(
-        reference_image=utils.parse_image(reference_image),
+        reference_image=parse_image(reference_image),
         capture_time_out=capture_time_out,
         matching_score_threshold=matching_score_threshold,
         anti_spoofing=anti_spoofing,
         live_quality_analysis=live_quality_analysis,
         reference_quality_analysis=reference_quality_analysis,
-
     ).to_dict()
 
-    response = utils.request('POST', url, json=verify_request)
+    response = request('POST', url, json=verify_request)
 
     return VerifyResponse.from_dict(response)
 
@@ -81,12 +81,12 @@ def verify_images(probe_image, reference_image, matching_score_threshold: float 
     """
     url = 'bit/verify_images'
     verify_images_request = VerifyImagesRequest(
-        probe_image=utils.parse_image(probe_image),
-        reference_image=utils.parse_image(reference_image),
+        probe_image=parse_image(probe_image),
+        reference_image=parse_image(reference_image),
         matching_score_threshold=matching_score_threshold
     ).to_dict()
 
-    response = utils.request('POST', url, json=verify_images_request)
+    response = request('POST', url, json=verify_images_request)
 
     return VerifyImagesResponse.from_dict(response)
 
@@ -96,8 +96,8 @@ def status() -> BiTStatus:
     url = 'bit/status'
     # If the camera is available the request is answered with an empty 200 OK. Otherwise exception is thrown.
     try:
-        utils.request('GET', url)
-    except utils.YoonikBitException as bit_exception:
+        request('GET', url)
+    except YoonikApiException as bit_exception:
         if bit_exception.status_code == 503:
             return BiTStatus.NotAvailable
         raise
@@ -109,5 +109,5 @@ def setup():
         Perform BiT setup actions
     """
     url = 'bit/setup'
-    utils.request('GET', url)
+    request('GET', url)
 

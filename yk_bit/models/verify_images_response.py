@@ -3,8 +3,8 @@
 from __future__ import absolute_import
 from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
-from yk_bit.models.base_model_ import Model
-from yk_bit.models import utils
+from yk_utils.models import Model
+from yk_utils.models import deserialization
 
 
 class VerifyImagesResponse(Model):
@@ -43,7 +43,7 @@ class VerifyImagesResponse(Model):
         :return: The verify_images_response of this VerifyImagesResponse.  # noqa: E501
         :rtype: VerifyImagesResponse
         """
-        return utils.deserialize_model(dikt, cls)
+        return deserialization.deserialize_model(dikt, cls)
 
     @property
     def matching_score(self) -> float:

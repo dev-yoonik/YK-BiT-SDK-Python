@@ -21,4 +21,3 @@ from yk_bit.models.verify_request import VerifyRequest
 from yk_bit.models.verify_response import VerifyResponse
 from yk_bit.models.verify_images_request import VerifyImagesRequest
 from yk_bit.models.verify_images_response import VerifyImagesResponse
-from . import utils
