@@ -1,7 +1,7 @@
 """ Module of the YooniK BiometricInThings API.
 """
 from enum import Enum
-from yk_utils.image import parse_image
+from yk_utils.images import parse_image
 from yk_utils.apis import request, YoonikApiException
 from yk_bit.models import CaptureRequest, VerifyImagesRequest, VerifyRequest, \
     CaptureResponse, VerifyResponse, VerifyImagesResponse
