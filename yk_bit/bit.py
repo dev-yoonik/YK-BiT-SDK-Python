@@ -13,7 +13,7 @@ class BiTStatus(Enum):
 
 
 def capture(capture_timeout: float = 10, anti_spoofing: bool = True,
-            live_quality_analysis: bool = False) -> CaptureResponse:
+            live_quality_analysis: bool = False, camera_url: str = '0') -> CaptureResponse:
     """ Provides a live captured frame from the devices camera in base 64 format and its quality metrics.
     :param capture_timeout:
         Capture timeout in seconds.
@@ -21,12 +21,19 @@ def capture(capture_timeout: float = 10, anti_spoofing: bool = True,
         Activates anti-spoofing detection.
     :param live_quality_analysis:
         Activate ISO/ICAO-19794-5 face quality compliance checks on the live face images.
+    :param camera_url:
+        Pre-configured camera url specifier.
     :return:
         The captured image in base 64 format and the capture status.
     """
 
     url = 'bit/capture'
-    capture_request = CaptureRequest(capture_timeout, anti_spoofing, live_quality_analysis).to_dict()
+    capture_request = CaptureRequest(
+        capture_time_out=capture_timeout,
+        anti_spoofing=anti_spoofing,
+        live_quality_analysis=live_quality_analysis,
+        camera_url=camera_url
+    ).to_dict()
     response = request('POST', url, json=capture_request)
 
     return CaptureResponse.from_dict(response)
@@ -34,7 +41,7 @@ def capture(capture_timeout: float = 10, anti_spoofing: bool = True,
 
 def verify(reference_image, capture_time_out: float = 10.0, matching_score_threshold: float = 0.4,
            anti_spoofing: bool = True, live_quality_analysis: bool = False,
-           reference_quality_analysis: bool = False) -> VerifyResponse:
+           reference_quality_analysis: bool = False, camera_url: str = '0') -> VerifyResponse:
     """ Captures a live frame from the camera and cross examines with the reference image.
         :param reference_image:
             Image can be a string, a file path or a file-like object.
@@ -48,6 +55,8 @@ def verify(reference_image, capture_time_out: float = 10.0, matching_score_thres
             Defines the minimum acceptable score for a positive match.
         :param capture_time_out:
             Capture timeout in seconds.
+        :param camera_url:
+            Pre-configured camera url specifier.
         :return:
             The frame that was captured to verify against the reference in base 64 format,
              its verification status and the matching score.
@@ -60,6 +69,7 @@ def verify(reference_image, capture_time_out: float = 10.0, matching_score_thres
         anti_spoofing=anti_spoofing,
         live_quality_analysis=live_quality_analysis,
         reference_quality_analysis=reference_quality_analysis,
+        camera_url=camera_url
     ).to_dict()
 
     response = request('POST', url, json=verify_request)

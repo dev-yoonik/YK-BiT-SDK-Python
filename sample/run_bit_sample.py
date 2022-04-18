@@ -53,6 +53,8 @@ if __name__ == "__main__":
 
             # Verify
             verified = verify(reference_image=captured.image, capture_time_out=10, anti_spoofing=True)
+            verified = verify(reference_image=captured.image, capture_time_out=10,
+                              anti_spoofing=True, camera_url='0')
             print(f"Verify: \n"
                   f"\t Matching Score: {verified.matching_score} \n"
                   f"\t Status: {verified.verify_status} \n"
