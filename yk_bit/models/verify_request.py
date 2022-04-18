@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 from yk_utils.models import Model
-from yk_utils.models import deserialization
+from yk_utils.models import deserialize_model
 
 
 class VerifyRequest(Model):
@@ -13,7 +13,10 @@ class VerifyRequest(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, capture_time_out: float=10.0, reference_image: str=None, matching_score_threshold: float=0.4, anti_spoofing: bool=True, live_quality_analysis: bool=False, reference_quality_analysis: bool=False):  # noqa: E501
+    def __init__(self, capture_time_out: float = 10.0, reference_image: str = None,
+                 matching_score_threshold: float = 0.4, anti_spoofing: bool = True,
+                 live_quality_analysis: bool = False, reference_quality_analysis: bool = False,
+                 camera_url: str = '0'):  # noqa: E501
         """VerifyRequest - a model defined in Swagger
 
         :param capture_time_out: The capture_time_out of this VerifyRequest.  # noqa: E501
@@ -28,6 +31,8 @@ class VerifyRequest(Model):
         :type live_quality_analysis: bool
         :param reference_quality_analysis: The reference_quality_analysis of this VerifyRequest.  # noqa: E501
         :type reference_quality_analysis: bool
+        :param camera_url: The camera_url of this VerifyRequest.  # noqa: E501
+        :type camera_url: str
         """
         self.swagger_types = {
             'capture_time_out': float,
@@ -35,7 +40,8 @@ class VerifyRequest(Model):
             'matching_score_threshold': float,
             'anti_spoofing': bool,
             'live_quality_analysis': bool,
-            'reference_quality_analysis': bool
+            'reference_quality_analysis': bool,
+            'camera_url': str
         }
 
         self.attribute_map = {
@@ -44,7 +50,8 @@ class VerifyRequest(Model):
             'matching_score_threshold': 'matching_score_threshold',
             'anti_spoofing': 'anti_spoofing',
             'live_quality_analysis': 'live_quality_analysis',
-            'reference_quality_analysis': 'reference_quality_analysis'
+            'reference_quality_analysis': 'reference_quality_analysis',
+            'camera_url': 'camera_url'
         }
 
         self._capture_time_out = capture_time_out
@@ -53,6 +60,7 @@ class VerifyRequest(Model):
         self._anti_spoofing = anti_spoofing
         self._live_quality_analysis = live_quality_analysis
         self._reference_quality_analysis = reference_quality_analysis
+        self._camera_url = camera_url
 
     @classmethod
     def from_dict(cls, dikt) -> 'VerifyRequest':
@@ -63,7 +71,7 @@ class VerifyRequest(Model):
         :return: The verify_request of this VerifyRequest.  # noqa: E501
         :rtype: VerifyRequest
         """
-        return deserialization.deserialize_model(dikt, cls)
+        return deserialize_model(dikt, cls)
 
     @property
     def capture_time_out(self) -> float:
@@ -202,3 +210,26 @@ class VerifyRequest(Model):
         """
 
         self._reference_quality_analysis = reference_quality_analysis
+
+    @property
+    def camera_url(self) -> str:
+        """Gets the camera_url of this VerifyRequest.
+
+        Camera URL specification, this must be coherent with the cameras settings in the configuration file.  # noqa: E501
+
+        :return: The camera_url of this VerifyRequest.
+        :rtype: str
+        """
+        return self._camera_url
+
+    @camera_url.setter
+    def camera_url(self, camera_url: str):
+        """Sets the camera_url of this VerifyRequest.
+
+        Camera URL specification, this must be coherent with the cameras settings in the configuration file.  # noqa: E501
+
+        :param camera_url: The camera_url of this VerifyRequest.
+        :type camera_url: str
+        """
+
+        self._camera_url = camera_url

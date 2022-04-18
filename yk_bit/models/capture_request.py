@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 from yk_utils.models import Model
-from yk_utils.models import deserialization
+from yk_utils.models import deserialize_model
 
 
 class CaptureRequest(Model):
@@ -13,7 +13,8 @@ class CaptureRequest(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, capture_time_out: float=10.0, anti_spoofing: bool=True, live_quality_analysis: bool=False):  # noqa: E501
+    def __init__(self, capture_time_out: float = 10.0, anti_spoofing: bool = True,
+                 live_quality_analysis: bool = False, camera_url: str = '0'):  # noqa: E501
         """CaptureRequest - a model defined in Swagger
 
         :param capture_time_out: The capture_time_out of this CaptureRequest.  # noqa: E501
@@ -22,22 +23,27 @@ class CaptureRequest(Model):
         :type anti_spoofing: bool
         :param live_quality_analysis: The live_quality_analysis of this CaptureRequest.  # noqa: E501
         :type live_quality_analysis: bool
+        :param camera_url: The camera_url of this CaptureRequest.  # noqa: E501
+        :type camera_url: str
         """
         self.swagger_types = {
             'capture_time_out': float,
             'anti_spoofing': bool,
-            'live_quality_analysis': bool
+            'live_quality_analysis': bool,
+            'camera_url': str
         }
 
         self.attribute_map = {
             'capture_time_out': 'capture_time_out',
             'anti_spoofing': 'anti_spoofing',
-            'live_quality_analysis': 'live_quality_analysis'
+            'live_quality_analysis': 'live_quality_analysis',
+            'camera_url': 'camera_url'
         }
 
         self._capture_time_out = capture_time_out
         self._anti_spoofing = anti_spoofing
         self._live_quality_analysis = live_quality_analysis
+        self._camera_url = camera_url
 
     @classmethod
     def from_dict(cls, dikt) -> 'CaptureRequest':
@@ -48,7 +54,7 @@ class CaptureRequest(Model):
         :return: The capture_request of this CaptureRequest.  # noqa: E501
         :rtype: CaptureRequest
         """
-        return deserialization.deserialize_model(dikt, cls)
+        return deserialize_model(dikt, cls)
 
     @property
     def capture_time_out(self) -> float:
@@ -120,3 +126,26 @@ class CaptureRequest(Model):
         """
 
         self._live_quality_analysis = live_quality_analysis
+
+    @property
+    def camera_url(self) -> str:
+        """Gets the camera_url of this CaptureRequest.
+
+        Camera URL specification, this must be coherent with the cameras settings in the configuration file.  # noqa: E501
+
+        :return: The camera_url of this CaptureRequest.
+        :rtype: str
+        """
+        return self._camera_url
+
+    @camera_url.setter
+    def camera_url(self, camera_url: str):
+        """Sets the camera_url of this CaptureRequest.
+
+        Camera URL specification, this must be coherent with the cameras settings in the configuration file.  # noqa: E501
+
+        :param camera_url: The camera_url of this CaptureRequest.
+        :type camera_url: str
+        """
+
+        self._camera_url = camera_url
