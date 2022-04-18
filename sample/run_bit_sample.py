@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     if bit_availability == BiTStatus.Available:
         # Capture
-        captured = capture(capture_timeout=10)
+        captured = capture(capture_timeout=10, camera_url='0')
         print(f"Capture: \n"
               f"\t Status: {captured.capture_status} \n"
               # f"\t Image: {captured.image} \n"
@@ -52,7 +52,6 @@ if __name__ == "__main__":
             base64_to_file("captured", captured.image)
 
             # Verify
-            verified = verify(reference_image=captured.image, capture_time_out=10, anti_spoofing=True)
             verified = verify(reference_image=captured.image, capture_time_out=10,
                               anti_spoofing=True, camera_url='0')
             print(f"Verify: \n"
