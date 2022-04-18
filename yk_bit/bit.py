@@ -104,7 +104,7 @@ def verify_images(probe_image, reference_image, matching_score_threshold: float 
 def status() -> BiTStatus:
     """ Checks for the camera status. """
     url = 'bit/status'
-    # If the camera is available the request is answered with an empty 200 OK. Otherwise exception is thrown.
+    # If the cameras are available the request is answered with an empty 200 OK. Otherwise exception is thrown.
     try:
         request('GET', url)
     except YoonikApiException as bit_exception:
