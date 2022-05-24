@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="yk_bit",
-    version="1.1.1",
+    version="2.0.0-dev0",
     description="Python SDK for the YooniK BiometricInThings API.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -21,7 +21,8 @@ setup(
         "six",
         "requests",
         "setuptools",
-        "yk-utils>=1.1.2,<2"
+        "yk-utils>=1.1.4,<2",
+        "yk-bit-api-model>=1.3.3,<2"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

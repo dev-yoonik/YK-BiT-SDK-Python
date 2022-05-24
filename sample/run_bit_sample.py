@@ -1,6 +1,7 @@
 import base64
 from os import getenv
-from yk_bit import BaseUrl, Key, capture, verify_images, verify, status, setup, BiTStatus
+from yk_bit import BaseUrl, Key, capture, verify_images, verify, status, setup, BiTStatus, \
+    hardware_reset
 
 """
 First time running:
@@ -65,3 +66,7 @@ if __name__ == "__main__":
             print(f"Verify Images: \n"
                   f"\t Matching Score: {verified_images.matching_score} \n"
                   f"\t Status: {verified_images.verify_images_status} \n")
+
+            # Hardware Reset
+            hardware_reset = hardware_reset()
+            print(f"Hardware reset: {hardware_reset.message}")
