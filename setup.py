@@ -14,8 +14,7 @@ setup(
     url="https://github.com/dev-yoonik/YK-BiT-SDK-Python",
     license='MIT',
     packages=[
-        "yk_bit",
-        "yk_bit.models"
+        "yk_bit"
     ],
     install_requires=[
         "six",
