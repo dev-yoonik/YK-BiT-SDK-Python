@@ -3,8 +3,8 @@
 from enum import Enum
 from yk_utils.images import parse_image
 from yk_utils.apis import request, YoonikApiException
-from yk_bit.models import CaptureRequest, VerifyImagesRequest, VerifyRequest, \
-    CaptureResponse, VerifyResponse, VerifyImagesResponse
+from yk_bit_api_models import CaptureRequest, VerifyImagesRequest, VerifyRequest, \
+    CaptureResponse, VerifyResponse, VerifyImagesResponse, HardwareResetResponse
 
 
 class BiTStatus(Enum):
@@ -89,6 +89,21 @@ def verify_images(probe_image, reference_image, matching_score_threshold: float 
     response = request('POST', url, json=verify_images_request)
 
     return VerifyImagesResponse.from_dict(response)
+
+
+def hardware_reset() -> HardwareResetResponse:
+    """ Performs camera hardware reset.
+    :return:
+        The hardware reset response.
+    """
+    url = 'bit/hardware_reset'
+    try:
+        response = request('POST', url)
+    except YoonikApiException as yk_exc:
+        if yk_exc.status_code == 501:
+            return HardwareResetResponse(message="Hardware reset not implemented "
+                                                 "for the installed camera type.")
+    return HardwareResetResponse.from_dict(response)
 
 
 def status() -> BiTStatus:
