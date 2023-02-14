@@ -1,4 +1,4 @@
-""" Module of the YooniK BiometricInThings API.
+""" Module of the Youverse BiometricInThings API.
 """
 from enum import Enum
 from yk_utils.images import parse_image
