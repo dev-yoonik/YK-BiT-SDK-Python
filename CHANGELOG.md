@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+## v2.0.0
+
 ### Changed
 
-- BiT API models to yk-bit-api-model
+- Youverse rebranding.
+- Moved BiT API models to yk-bit-api-model package.
 
 ## v1.1.1
 

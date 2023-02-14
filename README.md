@@ -1,13 +1,13 @@
 
-![https://yk-website-images.s3.eu-west-1.amazonaws.com/LogoV4_TRANSPARENT.png](https://yk-website-images.s3.eu-west-1.amazonaws.com/LogoV4_TRANSPARENT.png)
+![logo](https://yk-website-images.s3.eu-west-1.amazonaws.com/LogoV4_TRANSPARENT.png?)
 
-# YooniK BiometricInThings API: Python SDK & Sample
+# Youverse BiometricInThings API: Python SDK & Sample
 
 [![PyPi Version](https://img.shields.io/pypi/v/yk_bit.svg)](https://pypi.org/project/yk-bit/)
 [![License](https://img.shields.io/github/license/dev-yoonik/YK-BiT-SDK-Python)](https://github.com/dev-yoonik/YK-BiT-SDK-Python/blob/main/LICENSE)
 
 
-This repository contains the Python Module of the YooniK BiT API, an offering within [YooniK Services](https://www.yoonik.me)
+This repository contains the Python Module of the Youverse BiT API, an offering within [Youverse Services](https://www.youverse.id)
 
 ## Getting started
 
@@ -48,7 +48,7 @@ if YKB.bit.status() == YKB.BiTStatus.Available:
 
 ```
 
- If you're interested in using YooniK.BiometricInThings API for identification purposes, please contact us.
+ If you're interested in using Youverse BiometricInThings API for identification purposes, please contact us.
 
 ## Running the sample
 
@@ -60,11 +60,11 @@ Run:
 python run_bit_sample.py
 ```
 
-## YooniK BiT API Details
+## Youverse BiT API Details
 
 For a complete specification of our BiT API please check the [swagger file](https://dev-yoonik.github.io/YK-BiT-Documentation/).
 
 ## Contact & Support
 
-For more information and trial licenses please [contact us](mailto:tech@yoonik.me) or join us at our [discord community](https://discord.gg/SqHVQUFNtN).
+For more information and trial licenses please [contact us](mailto:tech@youverse.id) or join us at our [discord community](https://discord.gg/SqHVQUFNtN).
 
