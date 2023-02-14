@@ -6,7 +6,7 @@ on:
 
 env:
   # PYPI_TEST_SOURCE_URL:  'https://test.pypi.org/legacy/'
-  PY_VERSION: 3.6
+  PY_VERSION: 3.7
 
 jobs:
   build-and-publish:
